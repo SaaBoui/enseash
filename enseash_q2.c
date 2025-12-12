@@ -45,7 +45,7 @@ int main(void)
         ssize_t bytes_read = read(STDIN_FILENO, buffer, BUFFER_SIZE - 1);
 
         if (bytes_read <= 0) {
-            // EOF (Ctrl+D) or error: pour Q2 on sort juste silencieusement
+            // EOF (Ctrl+D) or error: on sort juste silencieusement
             break;
         }
 
@@ -60,7 +60,7 @@ int main(void)
             continue;
         }
 
-        // For Q2: command without arguments
+        // command without arguments
         // We prepare argv with only the program name and a NULL terminator.
         char *argv[2];
         argv[0] = buffer;
@@ -88,7 +88,7 @@ int main(void)
             int status;
             (void)waitpid(pid, &status, 0);
 
-            // Pour Q2, on n'affiche pas encore le code retour dans le prompt.
+            // On n'affiche pas encore le code retour dans le prompt.
         }
     }
 
