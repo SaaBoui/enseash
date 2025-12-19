@@ -244,14 +244,14 @@ File
 
 enseash_q7.c
 
-9. Compilation and Execution
+ Compilation and Execution
 
 Example compilation and execution for Q7:
 
 gcc -Wall -Wextra enseash_q7.c -o enseash_q7
 ./enseash_q7
 
-10. Conclusion
+## Conclusion
 
 This TP demonstrates the core mechanisms of Unix shell implementation using low-level system calls.
 Each question incrementally adds functionality while reinforcing key system programming concepts such as process control, synchronization, and file descriptor management.
