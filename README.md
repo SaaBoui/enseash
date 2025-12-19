@@ -173,25 +173,7 @@ Display the execution time of the previously executed command in milliseconds wi
 
 ---
 
-## 7. Question 6 – Command Arguments Support
 
-### Objective
-Allow execution of commands with arguments:
-
-### Implementation
-- Execution time is measured using `clock_gettime(CLOCK_MONOTONIC, ...)`
-- The timestamp is taken just before `fork()` and after `waitpid()`
-- The elapsed time is computed in milliseconds
-- The result is integrated into the prompt alongside the exit status or signal
-
-### Concepts Illustrated
-- High-resolution time measurement
-- Performance observation at process level
-
-### File
-- `enseash_q5.c`
-
----
 
 ## 7. Question 6 – Command Arguments Support
 
@@ -205,7 +187,7 @@ sleep 1
 - The input line is tokenized into an `argv[]` array
 - Tokens are split on spaces and tabs
 - The command is executed using:
-```c
+
 execvp(argv[0], argv);
 * The argument vector is NULL-terminated as required
 
