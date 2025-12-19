@@ -24,7 +24,7 @@ High-level I/O functions (e.g. `printf`) are intentionally avoided.
 
 ---
 
-## 2. Question 1 – Minimal Shell Structure
+## Question 1 – Minimal Shell Structure
 
 ### Objective
 Implement a minimal shell that:
@@ -49,7 +49,7 @@ Pour quitter, tapez 'exit'.
 
 ---
 
-## 3. Question 2 – REPL and Command Execution
+## Question 2 – REPL and Command Execution
 
 ### Objective
 Transform the program into an interactive shell implementing a **REPL** (Read–Eval–Print Loop) capable of:
@@ -81,7 +81,7 @@ Transform the program into an interactive shell implementing a **REPL** (Read–
 
 ---
 
-## 4. Question 3 – Shell Termination
+## Question 3 – Shell Termination
 
 ### Objective
 Allow the user to exit the shell cleanly:
@@ -107,7 +107,7 @@ Bye bye...
 
 ---
 
-## 5. Question 4 – Exit Status and Signal Reporting
+## Question 4 – Exit Status and Signal Reporting
 
 ### Objective
 Enhance the prompt to display information about the termination of the previously executed command:
@@ -142,14 +142,14 @@ The first prompt after startup remains:
 
 ---
 
-## 6. Compilation and Execution
+## Compilation and Execution
 
 Example compilation and execution for Q4:
 
 gcc enseash_q4.c -o enseash_q4
 ./enseash_q4
 
-## 6. Question 5 – Execution Time Measurement
+## Question 5 – Execution Time Measurement
 
 ### Objective
 Display the execution time of the previously executed command in milliseconds within the prompt.
@@ -175,7 +175,7 @@ Display the execution time of the previously executed command in milliseconds wi
 
 
 
-## 7. Question 6 – Command Arguments Support
+## Question 6 – Command Arguments Support
 
 ### Objective
 Allow execution of commands with arguments:
@@ -205,7 +205,7 @@ File
 
 enseash_q6.c
 
-8. Question 7 – Input/Output Redirections
+## Question 7 – Input/Output Redirections
 Objective
 
 Support basic input and output redirections:
