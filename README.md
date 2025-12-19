@@ -146,7 +146,6 @@ The first prompt after startup remains:
 
 Example compilation and execution for Q4:
 
-```bash
 gcc enseash_q4.c -o enseash_q4
 ./enseash_q4
 
