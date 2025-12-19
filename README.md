@@ -149,3 +149,128 @@ Example compilation and execution for Q4:
 ```bash
 gcc enseash_q4.c -o enseash_q4
 ./enseash_q4
+
+## 6. Question 5 – Execution Time Measurement
+
+### Objective
+Display the execution time of the previously executed command in milliseconds within the prompt.
+
+### Prompt Format
+- enseash [exit:0|3ms] %
+
+
+### Implementation
+- Execution time is measured using `clock_gettime(CLOCK_MONOTONIC, ...)`
+- The timestamp is taken just before `fork()` and after `waitpid()`
+- The elapsed time is computed in milliseconds
+- The result is integrated into the prompt alongside the exit status or signal
+
+### Concepts Illustrated
+- High-resolution time measurement
+- Performance observation at process level
+
+### File
+- `enseash_q5.c`
+
+---
+
+## 7. Question 6 – Command Arguments Support
+
+### Objective
+Allow execution of commands with arguments:
+
+### Implementation
+- Execution time is measured using `clock_gettime(CLOCK_MONOTONIC, ...)`
+- The timestamp is taken just before `fork()` and after `waitpid()`
+- The elapsed time is computed in milliseconds
+- The result is integrated into the prompt alongside the exit status or signal
+
+### Concepts Illustrated
+- High-resolution time measurement
+- Performance observation at process level
+
+### File
+- `enseash_q5.c`
+
+---
+
+## 7. Question 6 – Command Arguments Support
+
+### Objective
+Allow execution of commands with arguments:
+ls -l
+echo hello
+sleep 1
+
+### Implementation
+- The input line is tokenized into an `argv[]` array
+- Tokens are split on spaces and tabs
+- The command is executed using:
+```c
+execvp(argv[0], argv);
+* The argument vector is NULL-terminated as required
+
+Limitations
+
+* Quoted strings and escape characters are not handled
+
+Concepts Illustrated
+
+- Argument parsing
+
+- Proper use of execvp
+
+File
+
+enseash_q6.c
+
+8. Question 7 – Input/Output Redirections
+Objective
+
+Support basic input and output redirections:
+
+> redirects standard output to a file
+
+< redirects standard input from a file
+
+Expected Behavior
+enseash % ls > filelist.txt
+enseash [exit:0|1ms] % wc -l < filelist.txt
+44
+enseash [exit:0|4ms] %
+
+Implementation
+
+* The command line is parsed to detect < and > operators
+
+* Redirection filenames are extracted
+
+* Files are opened using open()
+
+* Redirections are applied using dup2() in the child process
+
+* A clean argument vector (without redirection tokens) is passed to execvp()
+
+Concepts Illustrated
+
+- File descriptor manipulation
+
+- Standard input/output redirection
+
+- Separation of shell logic and executed program
+
+File
+
+enseash_q7.c
+
+9. Compilation and Execution
+
+Example compilation and execution for Q7:
+
+gcc -Wall -Wextra enseash_q7.c -o enseash_q7
+./enseash_q7
+
+10. Conclusion
+
+This TP demonstrates the core mechanisms of Unix shell implementation using low-level system calls.
+Each question incrementally adds functionality while reinforcing key system programming concepts such as process control, synchronization, and file descriptor management.
